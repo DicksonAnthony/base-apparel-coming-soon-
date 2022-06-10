@@ -1,4 +1,4 @@
-@import url(https://fonts.google.com/specimen/Josefin+Sans);
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
 /* beginning of CSS*/
 html {
   scroll-behavior: smooth;
@@ -9,44 +9,42 @@ html {
   box-sizing: border-box;
 }
 .desktop {
-  background-size: cover;
   height: 100vh;
-  max-width: 1440px;
-  display: flex;
-  justify-content: space-between;
-  overflow: hidden;
   margin: 0 auto;
-  border: 1px solid magenta;
+  overflow: hidden;
+  max-width: 1440px;
+  background-size: cover;
 }
 body {
-  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%)),
-    linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%) opacity(0.2));
-  font-family: Josefin sans, sans-serif;
   font-size: 1rem;
+  font-family: "Josefin Sans", sans-serif;
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 }
 img {
-  box-sizing: border-box;
   max-width: 100%;
-  height: 100%;
-  object-fit: cover;
+  box-sizing: border-box;
+}
+.logo{
+  border: 1px solid magenta;
+  display: inline;
 }
 .cont {
-  padding: 3.75rem 6.25rem 5.625rem;
-  max-width: 60%;
+  display: flex;
+}
+.hero {
+  order: 2;
+  height: 100vh;
   border: 1px solid magenta;
 }
-.logo {
-  border: 1px solid magenta;
-  margin-bottom: 1.25rem;
+.hero img {
+  object-fit: cover;
+  height: 100vh;
 }
-/* .hero {
- max-width:100%;
-} */
 .big-text {
-  font-size: 1.875rem;
   font-weight: 600;
-  letter-spacing: 0.3rem;
   margin: 3.125rem 0;
+  font-size: 1.875rem;
+  letter-spacing: 0.3rem;
 }
 .small-text {
   margin-bottom: 50px;
@@ -57,21 +55,45 @@ span {
 }
 .notsame {
   border: 1px solid magenta;
-  margin-top: 7.5rem;
 }
 input {
   outline: none;
   height: 3rem;
   width: 25rem;
-  border-radius: 6.25rem;
-  border: 1px hsl(0, 5%, 80%);
-  border-style: solid;
-  box-sizing: border-box;
+  border: none;
   padding: 1.25rem;
+  box-sizing: border-box;
+  border-radius: 6.25rem;
+  outline: 1px solid grey;
 }
 input::placeholder {
   color: hsl(0, 36%, 70%);
 }
-.button{
-  max-width: 100%;
+.button {
+  left: 350px;
+  bottom: 35px;
+  padding: 22px 40px 12px;
+  position: relative;
+  border-radius: 25px;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+/* mobile version */
+@media screen and (max-width: 800px) {
+  .mobile {
+    flex-direction: column;
+    overflow: visible;
+  }
+  .cont {
+    flex-direction: column;
+  }
+  .notsame{
+    padding: 30px;
+  }
+  .hero {
+    order: -1;
+  }
+  input {
+    width: 100%;
+  }
 }
